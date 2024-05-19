@@ -1,0 +1,13 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+}

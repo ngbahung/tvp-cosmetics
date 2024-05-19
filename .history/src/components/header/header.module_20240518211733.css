@@ -1,0 +1,17 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+}

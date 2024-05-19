@@ -1,0 +1,22 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    height: 14.6875rem;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: calc(2/3);
+    background-color: var(--primary-blue-100);
+    align-items: center;
+    padding: ;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: calc(1/3);
+}

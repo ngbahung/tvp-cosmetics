@@ -1,0 +1,15 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    just
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+}
