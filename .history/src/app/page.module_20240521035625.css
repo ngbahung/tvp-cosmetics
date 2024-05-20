@@ -1,0 +1,16 @@
+.pageContainer {
+    padding: 3rem 10rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.leftSide {
+    display: flex;
+    fl
+    width: 33%;
+}
+
+.rightSide {
+    width: 67%;
+}

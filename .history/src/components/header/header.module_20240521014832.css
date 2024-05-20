@@ -1,0 +1,30 @@
+.headerContainer {
+    display: flex;
+    flex-direction: column;
+    height: 14.6875rem;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 67%;
+    background-color: var(--primary-blue-100);
+    align-items: center;
+    padding: 1rem;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 33%;
+    gap: 0;
+    background-color: var(--primary-green-100);
+}
+
+.tabContainer {
+    display: flex;
+    align-items: center;
+    width: full;
+}
