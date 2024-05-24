@@ -36,7 +36,7 @@ export default function Header() {
                         option1="Thông báo nội bộ"
                         href1="/internalAnnouncement"
                         option2="Bản tin"
-                        href2="/newsPage"/>
+                        href2="/"/>
                 </div>
 
                 <div className={styles.tabContainer}>

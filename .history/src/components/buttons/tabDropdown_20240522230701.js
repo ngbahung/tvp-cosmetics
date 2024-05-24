@@ -14,7 +14,7 @@ export default function TabDropdown({ label, option1, href1, option2, href2}) {
             </DropdownTrigger>
 
             <DropdownMenu>
-                <DropdownItem key={option1} href={href1}>
+                <DropdownItem key={option2} href={href2}>
                     {option1}
                 </DropdownItem>
 

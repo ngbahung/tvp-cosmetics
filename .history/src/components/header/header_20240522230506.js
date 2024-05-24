@@ -34,9 +34,9 @@ export default function Header() {
                     <TabDropdown 
                         label="THÔNG BÁO" 
                         option1="Thông báo nội bộ"
-                        href1="/internalAnnouncement"
+                        href1=""
                         option2="Bản tin"
-                        href2="/newsPage"/>
+                        href2="/"/>
                 </div>
 
                 <div className={styles.tabContainer}>
