@@ -5,13 +5,10 @@
 :root {
   --primary-blue-100: #6DC1DC;
   --primary-white-100: #ffffff;
+  --primary-green-100: #6AA687;
+  --primary-orange-100: #FFC397;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-  
-  }
-}
 
 body {
   
@@ -22,6 +19,5 @@ h1 {
   font-size: 36px;
 }
 
-@layer utilities {
-  
-}
+
+
