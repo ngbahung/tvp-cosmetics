@@ -1,20 +1,40 @@
-import NotiSummary from "@/components/cards/notiSummary";
-import styles from "./page.module.css";
+import NotiSummary from "../../components/cards/notiSummary";
 import { Pagination } from "@nextui-org/react";
+import AddAndEditButtons from "../../components/groupButtons/addAndEditButtons";
+import getAllBanTin from "../../api/getAllBanTin";
 
-export default function internalAnnouncement() {
+
+export default async function internalAnnouncement() {
+
+  const bantin = await getAllBanTin();
+  console.log(bantin);
+  console.log(bantin.result);
+  const bantinResult = bantin.result;
+
   return (
-    <div>
-        <div className= {styles.pageContainer}>
-            <NotiSummary announcementTittle={"BẢN TIN"} postedDate={"Ngày đăng: 20/10/2021"} content={"Nội dung bản tin"} />
-            <NotiSummary announcementTittle={"BẢN TIN"} postedDate={"Ngày đăng: 20/10/2021"} content={"Nội dung bản tin"} />
-        </div>
+    <div className="px-[10rem] py-[3rem]">
 
-        <div className="flex justify-center">
-            <Pagination total={10} initialPage={1} />
-        </div>
-  </div>
-    
+      <AddAndEditButtons />
+
+
+      <div className="flex flex-col gap-[3rem] ">
+        {bantinResult.map((bt) => (
+            <NotiSummary 
+              key={bt.id} 
+              id={bt.id} 
+              announcementTittle={bt.TieuDe} 
+              postedDate={"T6, 12/04/2024 - 16:45"} 
+              content={bt.NoiDung} 
+              type={'newsPage'}  />
+          ))
+        }
+      </div>
+
+      <div className="flex justify-center pt-[3rem]">
+        <Pagination total={10} initialPage={1} />
+      </div>
+    </div>
+
 
   );
 }

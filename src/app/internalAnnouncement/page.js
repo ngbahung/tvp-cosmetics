@@ -1,20 +1,35 @@
-import NotiSummary from "@/components/cards/notiSummary";
-import styles from "./page.module.css";
-import { Pagination } from "@nextui-org/react";
+"use client"
+
+import NotiSummary from "../../components/cards/notiSummary";
+import { Button, Pagination } from "@nextui-org/react";
+import AddAndEditButtons from "../../components/groupButtons/addAndEditButtons";
+import { useState } from "react";
 
 export default function internalAnnouncement() {
-  return (
-    <div>
-        <div className= {styles.pageContainer}>
-            <NotiSummary announcementTittle={"THÔNG BÁO"} postedDate={"Ngày đăng: 20/10/2021"} content={"Nội dung thông báo"} />
-            <NotiSummary announcementTittle={"THÔNG BÁO"} postedDate={"Ngày đăng: 20/10/2021"} content={"Nội dung thông báo"} />
-        </div>
 
-        <div className="flex justify-center">
-            <Pagination total={10} initialPage={1} />
-        </div>
-  </div>
-    
+  const [isEdit, setIsEdit] = useState(false);
+
+
+  return (
+    <div className="px-[10rem] py-[3rem]">
+
+      <AddAndEditButtons handleEdit={() => {
+        setIsEdit((prev) => !prev);
+      }} />
+
+      <div className="flex flex-col gap-[3rem]">
+        {
+          [...new Array(3)].map((_, index) => (
+            <NotiSummary id={index} announcementTittle={"THÔNG BÁO"} postedDate={"T6, 12/04/2024 - 16:45"} content={"Nội dung bản tin"} type={'internalAnnouncement'} isEdit={isEdit} />
+          ))
+        }
+      </div>
+
+      <div className="flex justify-center pt-[3rem]">
+        <Pagination total={10} initialPage={1} />
+      </div>
+    </div>
+
 
   );
 }
