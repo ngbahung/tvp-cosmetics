@@ -5,16 +5,25 @@ import Image from "next/image";
 import TabButton from "../buttons/tabButton";
 import TabDropdown from "../buttons/tabDropdown";
 import Link from "next/link";
+import { useUser } from "@clerk/nextjs";
+import { UserButton } from "@clerk/nextjs";
+
 
 export default function Header() {
+    const { user } = useUser();
+
     return (
         <div className="flex flex-col h-[235px] ">
             <div className="flex justify-around h-[67%] bg-blue items-center p-1">
                 <Image src={TVPLogo} alt="TVP Cosmetics Logo" width={100} height={100} />
                 <h1 className="text-white">CÔNG TY TNHH TVP COSMETICS</h1>
-                <Link className="flex self-end underline italic text-white" href="/login" >
-                    Đăng xuất
-                </Link>
+                {user ? (
+                    <UserButton afterSignOutUrl='/login'></UserButton>
+                )
+                    : (<Link className="flex self-end underline italic text-white" href="/login" >
+                        Đăng nhập
+                    </Link>)}
+                    
             </div>
 
             <div className="flex w-full justify-around items-center  bg-green ">
