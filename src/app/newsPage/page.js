@@ -8,24 +8,23 @@ export default async function internalAnnouncement() {
 
   const bantin = await getAllBanTin();
   console.log(bantin);
-  console.log(bantin.result);
-  const bantinResult = bantin.result;
+  
 
   return (
     <div className="px-[10rem] py-[3rem]">
 
-      <AddAndEditButtons />
+      <AddAndEditButtons/>
 
 
       <div className="flex flex-col gap-[3rem] ">
-        {bantinResult.map((bt) => (
+        {bantin.map((bt) => (
             <NotiSummary 
               key={bt.id} 
               id={bt.id} 
               announcementTittle={bt.TieuDe} 
-              postedDate={"T6, 12/04/2024 - 16:45"} 
+              postedDate={"Thứ 4, 06/05/2024 - 16:45"} 
               content={bt.NoiDung} 
-              type={'newsPage'}  />
+              type={'newsPage'} />
           ))
         }
       </div>

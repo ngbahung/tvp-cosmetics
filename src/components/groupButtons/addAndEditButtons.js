@@ -1,26 +1,29 @@
 'use client';
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure, Textarea } from "@nextui-org/react";
 import { X } from 'lucide-react';
 
-const AddAndEditButtons = ({ }) => {
-  const [isEdit, setIsEdit] = React.useState(false);
+
+const AddAndEditButtons = ({ isEditable = false }) => {
+  // Remove the unused declaration of isEdit
+  const [isEdit, setIsEdit] = React.useState(isEditable);
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
   const [filesUpload, setFilesUpload] = React.useState([]);
 
   const handleEdit = () => {
-    setIsEdit((prev) => !prev);
+    if(isEdit)
+      setIsEdit((prev) => !prev);
   }
 
 
   return (
     <div className="flex items-center gap-2 pb-8">
       <Button radius="full" className="text-white bg-green font-bold" onPress={onOpen}>Thêm</Button>
-      <Button radius="full" className="text-white bg-green font-bold" onPress={handleEdit}>Quản lý</Button>
+      {/* <Button radius="full" className="text-white bg-green font-bold" onPress={handleEdit}>Xóa</Button> */}
 
-      <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
+      <Modal isOpen={isOpen} onOpenChange={onOpenChange} >
         <ModalContent>
           {(onClose) => (
             <>

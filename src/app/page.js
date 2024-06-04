@@ -5,11 +5,15 @@ import NotiCard from "../components/cards/notiCard";
 import getAllThongBao from "../api/getAllThongBao";
 import getAllSuKien from "../api/getAllSuKien";
 import getAllBanTin from "../api/getAllBanTin";
+import getAllNhanVien from "../api/getAllNhanVien";
+import getAllPhongBan from "../api/getAllPhongBan";
 
 export default async function Home() {
   const thongbao = await getAllThongBao();
   const sukien = await getAllSuKien();
   const bantin = await getAllBanTin();
+  const nhanvien = await getAllNhanVien();
+  const phongban = await getAllPhongBan();
 
 
   const joinedData = thongbao.map((tb) => {
@@ -28,7 +32,16 @@ export default async function Home() {
     }
   });
 
-  console.log(joinedData2);
+  const joinedData3 = nhanvien.map((nv) => {
+    const pb = phongban.find((pb) => pb.id === nv.PhongBan_id);
+    return {
+      ...nv,
+      ...pb
+    }
+  }
+  );
+
+  console.log(joinedData3);
 
 
   const DateFormatter = (date) => {
@@ -50,7 +63,12 @@ export default async function Home() {
   return (
     <div className="flex gap-12 px-[10rem] py-[3rem]">
       <div className="flex flex-col gap-12">
-        <ProfileCard imgSrc={Logo} name={"Huy"} staffId={"123"} position={"Trường"} department={"Kinh doanh"} />
+        <ProfileCard imgSrc={Logo}
+        name={joinedData3[0].HoTen}
+        staffId={joinedData3[0].id}
+        position={joinedData3[0].ChucVu}
+        department={joinedData3[0].TenPhong}
+         />
         
           <EventCard 
           month1={monthFormatter(sukien[0].ThoiGian)} 

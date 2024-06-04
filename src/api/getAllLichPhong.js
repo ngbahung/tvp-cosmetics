@@ -7,5 +7,5 @@ export default async function getAllLichPhong() {
     });
     const roomScheduleList = await roomSchedule.json();
 
-    return roomScheduleList;
+    return roomScheduleList.result;
 }

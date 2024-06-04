@@ -13,13 +13,13 @@ const ApproveRequest = () => {
     stt: 1,
     requestDate: new Date(2024, 1, 1, 9, 0, 0),
     id: 1,
-    name: "Huy",
-    type: "Nghỉ",
+    name: "Hưng",
+    type: "Nghỉ ốm",
     time: {
       start: new Date(2024, 1, 1, 9, 0, 0),
       end: new Date(2024, 1, 1, 11, 0, 0),
     },
-    reason: 'Bận',
+    reason: 'Trào ngươc dạ dày',
   })
   ]
   console.log(rows);

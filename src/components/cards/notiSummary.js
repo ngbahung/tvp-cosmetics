@@ -14,7 +14,7 @@ export default function NotiSummary({ id, announcementTittle, postedDate, conten
                 <CardHeader className="flex items-center">
                     <h4 className="font-extrabold flex-1 text-xl text-green">{announcementTittle}</h4>
                     {
-                        isEdit &&
+                        // isEdit &&
                         <button onClick={onOpen}>
                             <FilePenLine />
                         </button>

@@ -2,16 +2,22 @@ import React from 'react'
 import { DatePicker } from "@nextui-org/date-picker";
 import getAllLichPhong from "../../api/getAllLichPhong";
 import getAllPhong from "../../api/getAllPhong";
+import { getLocalTimeZone, today, parseDate, now} from "@internationalized/date";
+import { I18nProvider } from "@react-aria/i18n";
 
 export default async function RoomSchedule() {
   const phong = await getAllPhong();
-  const phongResult = phong.result;
   // console.log(phongResult);
 
   const lichphong = await getAllLichPhong();
-  const lichphongResult = lichphong.result;
-  console.log(lichphongResult);
-  const lichphongData = lichphongResult.filter((lp) => lp.Phong_id === phongResult.id);
+  
+  const lichphongData = lichphong.map((lp) => {
+    const p = phong.filter((p) => p.id === lp.Phong_id);
+    return {
+      ...lp,
+      ...p
+    }
+  });
 
   function getHour(hour) {
     const h = hour.split(':')[0];
@@ -48,7 +54,7 @@ export default async function RoomSchedule() {
           </div>
         </div>
 
-        {phongResult.map((p) => (
+        {lichphongData.map((p) => (
             <div key={p.id} className='min-w-[200px] relative flex flex-col border-l  items-center'
             >
               <p className='font-bold w-full text-center pt-4 pb-8'>
@@ -59,7 +65,7 @@ export default async function RoomSchedule() {
               <div className='absolute top-[90px] left-0 w-full h-[calc(100%-90px)]'>
                 <div className='relative size-full' >
                   {
-                    lichphongResult.map((lp) => {
+                    lichphongData.map((lp) => {
 
                       const top = (getHour(lp.GioBatDau) - 7) * 60 + getMinute(lp.GioBatDau);
                       return (
