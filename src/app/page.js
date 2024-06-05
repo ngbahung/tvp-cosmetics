@@ -92,7 +92,7 @@ export default async function Home() {
                 title: joinedData[index].TieuDe,
                 date: DateFormatter(joinedData[index][0].ThoiGian),
                 time: joinedData[index][0].GioBatDau,
-                href: "/"
+                href: "/internalAnnouncement/0"
               }
             ))}
         />
@@ -105,7 +105,7 @@ export default async function Home() {
                   title: joinedData2[index].TieuDe,
                   date: DateFormatter(joinedData2[index][0].ThoiGian),
                   time: joinedData2[index][0].GioBatDau,
-                  href: "/"
+                  href: "/internalAnnouncement/0"
                 }
               ))}
         />
