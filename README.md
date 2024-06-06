@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Website nội bộ Công ty TVP Cosmetics
 
-First, run the development server:
+Đồ án môn học Quản lý dự án Công nghệ thông tin IS208.O21 được hướng dẫn bởi thầy Tạ Việt Phương.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+Dự án website nội bộ thực hiện các chức năng cơ bản như: 
+
+* Đăng nhập  
+* Quản lý profile nhân viên
+* Quản lý thông báo và bản tin
+* Xử lý yêu cầu nghỉ phép
+* Quản lý đăng ký lịch phòng họp
+
+
+
+
+## Hướng dẫn cài đặt
+
+Install tvp-cosmetics with npm
+
+Frontend: sử dụng Nextjs, Clerk Authentication, TailwindCSS  (branch main)
+* Tạo file .env.local ở / với nội dung như sau:
+
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_c29saWQtZmluY2gtNjQuY2xlcmsuYWNjb3VudHMuZGV2JA
+CLERK_SECRET_KEY=sk_test_ZfctMrHAXriMpJvmEWGJ8maCHvqPl4Gf8mHPZUpWci
+
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/login
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_OUT_URL=/login
+NEXT_PUBLIC_CLERK_REDIRECT_URL=/login
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+```bash
+  npm install
+  npm run dev
+```
+Backend: sử dụng Nodejs, ExpressJS (code ở branch DHung)  
+Database: MySQL  
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+* Đảm bảo đã insert dữ liệu từ file website_db.sql
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
