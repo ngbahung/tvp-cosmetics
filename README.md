@@ -23,7 +23,6 @@ Frontend: sử dụng Nextjs, Clerk Authentication, TailwindCSS  (branch main)
 
 ```
 NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=pk_test_c29saWQtZmluY2gtNjQuY2xlcmsuYWNjb3VudHMuZGV2JA
-CLERK_SECRET_KEY=sk_test_ZfctMrHAXriMpJvmEWGJ8maCHvqPl4Gf8mHPZUpWci
 
 NEXT_PUBLIC_CLERK_SIGN_IN_URL=/login
 NEXT_PUBLIC_CLERK_SIGN_UP_URL=/login
